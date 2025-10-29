@@ -5,8 +5,8 @@ public class Clicker : MonoBehaviour
 {
     //[SerializeField] private GameObject floatingTextPrefab;
     [SerializeField] private TextMeshProUGUI scoreText;
-    private int score = 0;
-    private int clickValue = 1;
+    public int score = 0;
+    public int clickValue = 1;
 
     private void OnMouseDown()
     {
