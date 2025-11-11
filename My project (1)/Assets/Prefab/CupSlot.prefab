@@ -842,11 +842,11 @@ GameObject:
   - component: {fileID: 2932689005575436702}
   - component: {fileID: 6504373880121037370}
   - component: {fileID: 2520549701286076369}
-  - component: {fileID: 1342493633070820532}
   - component: {fileID: 5378000545642188286}
   - component: {fileID: 2506992460509710287}
+  - component: {fileID: -6640941800139787140}
   m_Layer: 5
-  m_Name: Slot
+  m_Name: CupSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -916,32 +916,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1342493633070820532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4619155904623028542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d5e8695e67efac48b01b6ca12f4fbe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Item
-  itemNameText: {fileID: 1918213526779429363}
-  itemIcon: {fileID: 0}
-  itemDescription: Item Description
-  itemDescriptionText: {fileID: 7681232856851048081}
-  itemCoef: 0
-  itemCost: 0
-  itemCostText: {fileID: 3715925837097316505}
-  mainButton: {fileID: 6114682568287198780}
-  descriptionPanel: {fileID: 35453224725673932}
-  deactive: {fileID: 5156132763595517835}
-  bought: {fileID: 1968862321623071690}
-  notEnough: {fileID: 4230936087152619404}
-  Clicker: {fileID: 0}
 --- !u!61 &5378000545642188286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1015,6 +989,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6640941800139787140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619155904623028542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab3db51ee6d03d4d88b2d340e8f8b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: CupName
+  itemNameText: {fileID: 1918213526779429363}
+  itemIcon: {fileID: 2839534289105310750}
+  itemDescription: Cup Description
+  itemDescriptionText: {fileID: 7681232856851048081}
+  itemCoef: 0
+  itemCost: 0
+  itemCostText: {fileID: 3715925837097316505}
+  mainButton: {fileID: 6114682568287198780}
+  descriptionPanel: {fileID: 35453224725673932}
+  deactive: {fileID: 5156132763595517835}
+  bought: {fileID: 1968862321623071690}
+  notEnough: {fileID: 4230936087152619404}
+  Clicker: {fileID: 0}
+  newCup: {fileID: 0}
+  render: {fileID: 0}
 --- !u!1 &5156132763595517835
 GameObject:
   m_ObjectHideFlags: 0

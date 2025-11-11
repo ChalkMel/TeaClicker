@@ -1,12 +1,14 @@
 using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Clicker : MonoBehaviour
 {
     //[SerializeField] private GameObject floatingTextPrefab;
-    [SerializeField] private TextMeshProUGUI scoreText;
+    public TextMeshProUGUI scoreText;
     public int score = 0;
     public int clickValue = 1;
+    public List<GameObject> ingEnable = new List<GameObject>();
 
     private void OnMouseDown()
     {

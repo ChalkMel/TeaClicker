@@ -6,7 +6,7 @@ using System;
 using System.Collections;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CupSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private string itemName;
     [SerializeField] private TextMeshProUGUI itemNameText;
@@ -24,9 +24,12 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private GameObject bought;
     [SerializeField] private GameObject notEnough;
     [SerializeField] private Clicker Clicker;
+    [SerializeField] private Sprite newCup;
+    [SerializeField] private SpriteRenderer render;
     private void Start()
     {
         Clicker = FindFirstObjectByType<Clicker>();
+        render = FindFirstObjectByType<SpriteRenderer>();
         itemCostText.text = itemCost.ToString();
         itemNameText.text = itemName.ToString();
         mainButton.onClick.AddListener(OnMouseDown);
@@ -56,13 +59,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             isAcquired = true;
             StartCoroutine(ShowBoughtMessage());
             deactive.SetActive(true);
-            for (int i = 0; i < Clicker.ingEnable.Count; i++)
-            {
-                if (itemName == Clicker.ingEnable[i].name)
-                {
-                    Clicker.ingEnable[i].SetActive(true);
-                }
-            }
+            render.sprite = newCup;
         }
         else
         {
