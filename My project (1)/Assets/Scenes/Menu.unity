@@ -1063,6 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playButton: {fileID: 1821538187}
   exitButton: {fileID: 400537957}
+  audio: {fileID: 0}
 --- !u!114 &1875547478
 MonoBehaviour:
   m_ObjectHideFlags: 0

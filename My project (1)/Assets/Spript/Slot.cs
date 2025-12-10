@@ -109,8 +109,9 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             {
                 render.sprite = newCup;
                 isOn = true;
-                return;
                 audio.Play();
+                return;
+                
             }
         }
            
@@ -146,7 +147,9 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 onOff.SetActive(false);
                 render.sprite = newCup;
                 audio.Play();
-            }
+            if (isEvent)
+                eventScreen.SetActive(true);
+        }
         else
         {
             StartCoroutine(ShowNotEnoughMessage());
