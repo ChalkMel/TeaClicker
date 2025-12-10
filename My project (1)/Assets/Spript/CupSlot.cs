@@ -12,8 +12,10 @@ public class CupSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private TextMeshProUGUI itemNameText;
     [SerializeField] private Image itemIcon;
     [SerializeField] private string itemDescription;
+    [SerializeField] private TextMeshProUGUI itemNameTextDesc;
     [SerializeField] private TextMeshProUGUI itemDescriptionText;
     [SerializeField] private int itemCoef;
+    [SerializeField] private TextMeshProUGUI itemCoefText;
     [SerializeField] private int itemCost;
     [SerializeField] private TextMeshProUGUI itemCostText;
     private bool isAcquired;
@@ -33,13 +35,18 @@ public class CupSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         itemCostText.text = itemCost.ToString();
         itemNameText.text = itemName.ToString();
         mainButton.onClick.AddListener(OnMouseDown);
+        itemDescriptionText = descriptionPanel.transform.Find("DescriptionText").GetComponent<TextMeshProUGUI>();
+        itemNameTextDesc = descriptionPanel.transform.Find("DescriptionTextName").GetComponent<TextMeshProUGUI>();
+        itemCoefText = descriptionPanel.transform.Find("DescriptionCoef").GetComponent<TextMeshProUGUI>();
 
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
         descriptionPanel.SetActive(true);
+
         itemDescriptionText.text = itemDescription;
-        itemNameText.text = itemName;
+        itemNameTextDesc.text = itemName;
+        itemCoefText.text = $"You will get +{itemCoef}";
     }
 
     public void OnPointerExit(PointerEventData eventData)
