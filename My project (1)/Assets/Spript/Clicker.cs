@@ -17,7 +17,8 @@ public class Clicker : MonoBehaviour
     
     [SerializeField] private float cupScaleUp = 1.15f;
     [SerializeField] private float animationSpeed = 0.15f;
-    
+
+    public bool disable;
     private Vector3 originalScale;
     private bool isAnimating = false;
 
@@ -28,14 +29,17 @@ public class Clicker : MonoBehaviour
 
     private void OnMouseDown()
     {
-        score += clickValue;
-        scoreText.text = score.ToString();
-        particles.Play();
-        ShowFloatingText(clickValue);
-
-        if (!isAnimating)
+        if (!disable)
         {
-            StartCoroutine(AnimateCup());
+            score += clickValue;
+            scoreText.text = score.ToString();
+            particles.Play();
+            ShowFloatingText(clickValue);
+
+            if (!isAnimating)
+            {
+                StartCoroutine(AnimateCup());
+            }
         }
     }
     private void ShowFloatingText(int valueToShow)

@@ -133,8 +133,8 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                     isOn = true;
                 }
             }
-            if(isEvent)
-                eventScreen.SetActive(true);
+            if (isEvent)
+                Event();
         }
         else if (Clicker.score >= itemCost && cup)
             {
@@ -148,7 +148,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 render.sprite = newCup;
                 audio.Play();
             if (isEvent)
-                eventScreen.SetActive(true);
+                Event();
         }
         else
         {
@@ -167,5 +167,14 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         bought.SetActive(true);
         yield return new WaitForSeconds(2f);
         bought.SetActive(false);
+    }
+    private void Event()
+    {
+        eventScreen.SetActive(true);
+        Clicker.disable = true;
+    }
+    public void EventOff()
+    {
+        Clicker.disable = false;
     }
 }
