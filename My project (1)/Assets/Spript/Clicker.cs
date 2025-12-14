@@ -41,6 +41,8 @@ public class Clicker : MonoBehaviour
                 StartCoroutine(AnimateCup());
             }
         }
+        else
+            return;
     }
     private void ShowFloatingText(int valueToShow)
     {
